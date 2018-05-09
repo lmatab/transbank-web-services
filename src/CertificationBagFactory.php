@@ -7,6 +7,20 @@ namespace Freshwork\Transbank;
  */
 class CertificationBagFactory
 {
+
+
+     /**
+     * @return CertificationBag
+     */
+    public static function integrationCapturaDiferida()
+    {
+        $private_key = dirname(__FILE__) . '/certs/webpay-oneclick-integration/597020000547.key';
+        $client_certificate = dirname(__FILE__) . '/certs/webpay-oneclick-integration/597020000547.crt';
+
+        return new CertificationBag($private_key, $client_certificate, null, CertificationBag::INTEGRATION);
+    }
+
+
     /**
      * @return CertificationBag
      */
