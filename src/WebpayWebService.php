@@ -195,4 +195,42 @@ class WebpayWebService extends TransbankService
             $input->wPMDetail = $this->inscriptionInformation;
         }
     }
+
+
+  /**
+     * @param $transactionType
+     * @param $buyOrder
+     * @param $commerceCode
+     * @param $input
+     *
+     * @throws \InvalidArgumentException
+     */
+
+    public function initCapture($params)
+    {
+        
+        return $this->service->initCaptureCall($params)->return;
+    }
+
+
+  /**
+     * @param $transactionType
+     * @param $buyOrder
+     * @param $commerceCode
+     * @param $input
+     *
+     * @throws \InvalidArgumentException
+     */
+  
+    public function initNullify($params)
+    {
+
+        return $this->service->initNullifyCall($params)->return;
+
+
+    }
+
+
+
+
 }
