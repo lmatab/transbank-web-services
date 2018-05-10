@@ -53,4 +53,26 @@ class TransbankServiceFactory
         $service = new WebpayStandardWebService($certificationBag, $wsdlUrl);
         return new WebpayMall($service);
     }
+
+
+      /**
+     * @param CertificationBag $certificationBag
+     * @param null $wsdlUrl
+     * @return Webpaycapture
+     */
+
+    public static function getCaptureTransaction (CertificationBag $certificationBag, $wsdlUrl = 'https://webpay3gint.transbank.cl/WSWebpayTransaction/cxf/WSCommerceIntegrationService?wsdl')
+    {
+        $service = new WebpayStandardWebService($certificationBag, $wsdlUrl);
+        return new WebpayCapture($service);
+
+    }
+
+
+   public static function getNullifyTransaction (CertificationBag $certificationBag, $wsdlUrl = 'https://webpay3gint.transbank.cl/WSWebpayTransaction/cxf/WSCommerceIntegrationService?wsdl')
+    {
+        $service = new WebpayStandardWebService($certificationBag, $wsdlUrl);
+        return new WebpayCapture($service);
+
+    }
 }
