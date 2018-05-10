@@ -79,6 +79,35 @@ class WebpayStandardWebService extends TransbankWebService
 
         return $this->callSoapMethod('acknowledgeTransaction', $acknowledgeTransactionInput);
     }
+
+
+    /**
+     * Método para capturar el monto previamente autorizado.
+     *
+     * @param params con datos de autorización.
+     * @return captureresponse
+     */
+
+    function initCaptureCall($params)
+    {
+        return $this->callSoapMethod('capture', $params);
+    }
+
+
+     /**
+     * Método para anular el monto previamente autorizado.
+     *
+     * @param params con datos de autorización.
+     * @return nullifyresponse
+     */
+
+     function initNullifyCall($params)
+    {
+        return $this->callSoapMethod('nullify', $params);
+    }
+
+
+
 }
 
 ?>
