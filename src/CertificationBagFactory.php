@@ -14,8 +14,8 @@ class CertificationBagFactory
      */
     public static function integrationCapturaDiferida()
     {
-        $private_key = dirname(__FILE__) . '/certs/webpay-oneclick-integration/597020000547.key';
-        $client_certificate = dirname(__FILE__) . '/certs/webpay-oneclick-integration/597020000547.crt';
+        $private_key = dirname(__FILE__) . '/certs/webpay-oneclick-integration/597020000546.key';
+        $client_certificate = dirname(__FILE__) . '/certs/webpay-oneclick-integration/597020000546.crt';
 
         return new CertificationBag($private_key, $client_certificate, null, CertificationBag::INTEGRATION);
     }
