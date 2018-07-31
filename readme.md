@@ -341,6 +341,29 @@ $bag->setEnvironment(CertificationBag::INTEGRATION);
 $oneClickService = new WebpayOneClickWebService($bag);
 ```
 
+
+## Captura difedida
+
+El modo de captura diferida permite congelar fondos del cliente  y poder luego en un lapso máximo de 7 dias hábiles capturar esos fondos.Este
+método resulta muy conveniente para negocios que necesitan verificar su stock antes de cobrar al cliente, evitando asi costos relacionado con anulación.
+
+Este tipo de metodo de cobro ofrecido por transbank solo funciona con tarjetas de credito tanto nacional como extranjera.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Test Data
 Estos son los datos de tarjetas para que puedas probar en el ambiente de integración. 
 
