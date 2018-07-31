@@ -341,6 +341,34 @@ $bag->setEnvironment(CertificationBag::INTEGRATION);
 $oneClickService = new WebpayOneClickWebService($bag);
 ```
 
+
+## Captura difedida
+
+El modo de captura diferida permite congelar fondos del cliente  y poder luego en un lapso máximo de 7 dias hábiles capturarlos o  los mismo serán devueltos de forma automática al cliente.Este
+método resulta muy conveniente para negocios que necesitan verificar su stock antes de cobrar al cliente, evitando asi costos relacionado con anulación.
+
+Este tipo de metodo de cobro ofrecido por transbank solo funciona con tarjetas de credito tanto nacional como extranjera.
+
+Este es un servicio especial que ofrece transbank ademas de las transacciones normales por lo cual hay que solicitar la activación del servicio para poder  usarlo en producción.
+
+De manera general captura diferida tiene 2 pasos:
+
+## 1- Autorización: Congelamos el monto al cliente y el banco nos emite una seri de digitos que nos da acceso por un lapso máximo de 7 dias capturar un monto igual o menor que el que ha autorizado el cliente.
+
+
+
+
+
+
+
+## 2- Captura: En este paso capturamos  el monto y estará disponible en un lapso de 48 horas habiles en nuestra cuentas tal como si fuera una transacción normal. Solo se puede  realizar una sola captura, la misma debe ser por un monto igual o menor al autorizado por el cliente en el paso anterior, en caso de no realizar una captura  en los 7 dias habiles  el sistema de transbank automaticamente desbloquerá el monto al usuario
+y nosotros ya no tendremos posibilidad de capturarlo.
+
+
+
+
+
+
 ## Test Data
 Estos son los datos de tarjetas para que puedas probar en el ambiente de integración. 
 
